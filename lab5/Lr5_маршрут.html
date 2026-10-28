@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_58e68241595bd00a2e1bc9e31ebc792c {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_58e68241595bd00a2e1bc9e31ebc792c" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_58e68241595bd00a2e1bc9e31ebc792c = L.map(
+                "map_58e68241595bd00a2e1bc9e31ebc792c",
+                {
+                    center: [48.62150783999999, 22.303625169999997],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 14,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_6ceca2cfe7c6f24972e8a9785b1d1bac = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 16,
+  "maxNativeZoom": 16,
+  "noWrap": false,
+  "attribution": "Tiles \u0026copy; Esri \u0026mdash; Esri, DeLorme, NAVTEQ",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_6ceca2cfe7c6f24972e8a9785b1d1bac.addTo(map_58e68241595bd00a2e1bc9e31ebc792c);
+        
+    
+            var poly_line_c819ad27621ff8e98e84f48313c2fcda = L.polyline(
+                [[48.6094718, 22.3010644], [48.6226403, 22.2975821], [48.6234621, 22.2934854], [48.6251824, 22.294594], [48.6254216, 22.2962773], [48.6234585, 22.2992599], [48.6230194, 22.3021676], [48.6231573, 22.3025218], [48.6212238, 22.306576], [48.62134, 22.3067103], [48.606173, 22.3370773], [48.6094718, 22.3010644]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": "5, 5", "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_58e68241595bd00a2e1bc9e31ebc792c);
+        
+    
+            poly_line_c819ad27621ff8e98e84f48313c2fcda.bindTooltip(
+                `<div>
+                     Прямі відрізки (повітря)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_a0e3882c08fb47a1e551cf99c6ddac48 = L.polyline(
+                [[48.6094718, 22.3010644], [48.6092497, 22.3007043], [48.6094517, 22.3007791], [48.6095654, 22.300287], [48.6097629, 22.3004352], [48.6099497, 22.3007494], [48.6100538, 22.3006157], [48.6100851, 22.3006525], [48.6103162, 22.3008803], [48.6108856, 22.3012297], [48.6111247, 22.3013764], [48.6111719, 22.3014055], [48.6119486, 22.3018843], [48.6124704, 22.302206], [48.6125355, 22.3022461], [48.6128187, 22.3024655], [48.6129851, 22.3025479], [48.6130526, 22.3028224], [48.6136641, 22.3036285], [48.6138149, 22.303625], [48.6145976, 22.303193], [48.6151259, 22.3029028], [48.6159011, 22.3024726], [48.6175072, 22.3015912], [48.6175548, 22.3015656], [48.6189129, 22.3006679], [48.6202263, 22.299497], [48.620306, 22.2994218], [48.620393, 22.2993462], [48.6207616, 22.299026], [48.6211755, 22.2979241], [48.6211935, 22.2978343], [48.6212801, 22.2977422], [48.6220164, 22.2982912], [48.6220371, 22.2983166], [48.6225324, 22.2970145], [48.6225813, 22.2970979], [48.6227555, 22.2974111], [48.6226403, 22.2975821], [48.6226403, 22.2975821], [48.6227555, 22.2974111], [48.6225813, 22.2970979], [48.6225324, 22.2970145], [48.6225255, 22.296881], [48.6226223, 22.2965509], [48.6228801, 22.2956306], [48.6231535, 22.2946045], [48.6234621, 22.2934854], [48.6234621, 22.2934854], [48.6231535, 22.2946045], [48.6232967, 22.2946072], [48.6236372, 22.294814], [48.6236765, 22.2948594], [48.6237455, 22.2949059], [48.6238092, 22.2946679], [48.6238883, 22.2947241], [48.6240663, 22.294851], [48.624148, 22.2949093], [48.6241911, 22.2949406], [48.6242086, 22.2949534], [48.6242629, 22.294991], [48.6243164, 22.2950303], [48.6243609, 22.2950611], [48.6244719, 22.2951413], [48.6246566, 22.2946222], [48.6247405, 22.2944058], [48.6249165, 22.2944003], [48.6250811, 22.294317], [48.6255575, 22.2937362], [48.6255974, 22.2938161], [48.6251041, 22.2944534], [48.6251602, 22.294554], [48.6251824, 22.294594], [48.6251824, 22.294594], [48.6251602, 22.294554], [48.6251041, 22.2944534], [48.6247841, 22.294864], [48.6249242, 22.2951198], [48.6249929, 22.2951816], [48.624821, 22.2953373], [48.6249895, 22.2965693], [48.6253183, 22.2964302], [48.6254456, 22.2963386], [48.6254216, 22.2962773], [48.6254216, 22.2962773], [48.6254456, 22.2963386], [48.6255086, 22.2962933], [48.625547, 22.2966723], [48.6244511, 22.2971794], [48.6244764, 22.2973081], [48.6241319, 22.2979365], [48.6242087, 22.2980974], [48.624071, 22.2982203], [48.6240499, 22.298155], [48.6236456, 22.2988741], [48.6234585, 22.2992599], [48.6234585, 22.2992599], [48.6236456, 22.2988741], [48.6240939, 22.2995504], [48.6242909, 22.2998489], [48.6242416, 22.2999019], [48.6242849, 22.2999871], [48.6231664, 22.3015501], [48.6228346, 22.3019373], [48.6228727, 22.301984], [48.6230194, 22.3021676], [48.6230194, 22.3021676], [48.6228727, 22.301984], [48.6228346, 22.3019373], [48.6227971, 22.3018938], [48.6227133, 22.3020817], [48.6227312, 22.3021035], [48.6227055, 22.3023453], [48.6230866, 22.3026469], [48.6231573, 22.3025218], [48.6231573, 22.3025218], [48.6230866, 22.3026469], [48.6227055, 22.3023453], [48.6227341, 22.3027918], [48.62131, 22.305196], [48.6210656, 22.30569], [48.6212248, 22.3059101], [48.6213152, 22.3060469], [48.6213246, 22.3060614], [48.6212238, 22.306576], [48.6212238, 22.306576], [48.62134, 22.3067103], [48.62134, 22.3067103], [48.6212238, 22.306576], [48.6213246, 22.3060614], [48.6213152, 22.3060469], [48.6212248, 22.3059101], [48.6210656, 22.30569], [48.62131, 22.305196], [48.62126, 22.30513], [48.6214115, 22.3048064], [48.621025, 22.3040135], [48.6206038, 22.3039244], [48.6205604, 22.3040513], [48.6189215, 22.3074983], [48.6187783, 22.3078412], [48.6185511, 22.3079001], [48.6184249, 22.3080759], [48.6182266, 22.3080208], [48.6170305, 22.3076489], [48.6169929, 22.3076353], [48.6168782, 22.3075937], [48.6160613, 22.3070365], [48.6159794, 22.3072539], [48.6156095, 22.307741], [48.6155682, 22.307858], [48.615515, 22.3080351], [48.6154994, 22.3080819], [48.6152472, 22.3088185], [48.6151021, 22.3092211], [48.6149641, 22.3096241], [48.6149492, 22.3096696], [48.614911, 22.3097548], [48.6148084, 22.3100659], [48.6144589, 22.3113487], [48.6144489, 22.3113976], [48.6144373, 22.3115827], [48.6143852, 22.3123583], [48.6143547, 22.3129766], [48.6133513, 22.3159307], [48.6130883, 22.3170036], [48.6130137, 22.3171749], [48.6128676, 22.3173538], [48.6122011, 22.318338], [48.6119254, 22.318599], [48.6118818, 22.3186389], [48.6112846, 22.3191966], [48.6112639, 22.3191506], [48.6109017, 22.3194459], [48.609751, 22.3203465], [48.6085073, 22.3213993], [48.6084712, 22.3214321], [48.604417, 22.3273871], [48.6042935, 22.3281881], [48.6041494, 22.3294962], [48.6040297, 22.330227], [48.6035127, 22.3322714], [48.604118, 22.3325367], [48.6065183, 22.3340221], [48.606603, 22.3340798], [48.6066259, 22.3354521], [48.606369, 22.335716], [48.606173, 22.3370773], [48.606173, 22.3370773], [48.606369, 22.335716], [48.6066259, 22.3354521], [48.606603, 22.3340798], [48.6065183, 22.3340221], [48.604118, 22.3325367], [48.6035127, 22.3322714], [48.6040297, 22.330227], [48.6041494, 22.3294962], [48.6042935, 22.3281881], [48.604417, 22.3273871], [48.6084712, 22.3214321], [48.6085073, 22.3213993], [48.609751, 22.3203465], [48.6109017, 22.3194459], [48.6112639, 22.3191506], [48.6112846, 22.3191966], [48.6118818, 22.3186389], [48.6119254, 22.318599], [48.6122011, 22.318338], [48.6128676, 22.3173538], [48.6130137, 22.3171749], [48.6130883, 22.3170036], [48.6133513, 22.3159307], [48.6143547, 22.3129766], [48.6143852, 22.3123583], [48.6144373, 22.3115827], [48.6144489, 22.3113976], [48.6144589, 22.3113487], [48.6148084, 22.3100659], [48.6146809, 22.3099785], [48.6149154, 22.3093106], [48.6152435, 22.3084015], [48.6154206, 22.3078212], [48.6155432, 22.3074324], [48.6138074, 22.3040399], [48.6139038, 22.3039205], [48.613901, 22.3037788], [48.6138149, 22.303625], [48.6136641, 22.3036285], [48.6130526, 22.3028224], [48.6129851, 22.3025479], [48.6128187, 22.3024655], [48.6125355, 22.3022461], [48.6124704, 22.302206], [48.6119486, 22.3018843], [48.6111719, 22.3014055], [48.6111247, 22.3013764], [48.6108856, 22.3012297], [48.6103162, 22.3008803], [48.6100851, 22.3006525], [48.6100538, 22.3006157], [48.6099497, 22.3007494], [48.6097629, 22.3004352], [48.6095654, 22.300287], [48.6094517, 22.3007791], [48.6092497, 22.3007043], [48.6094718, 22.3010644]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_58e68241595bd00a2e1bc9e31ebc792c);
+        
+    
+            poly_line_a0e3882c08fb47a1e551cf99c6ddac48.bindTooltip(
+                `<div>
+                     Справжній пішохідний маршрут (по ребрах)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_f99ccfc8df76a06952681d8a46cdca25 = L.marker(
+                [48.6094718, 22.3010644],
+                {
+}
+            ).addTo(map_58e68241595bd00a2e1bc9e31ebc792c);
+        
+    
+            var icon_6db75a431a80096ee110743e0f011c54 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "train",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e9ccf60687402b56ec23e0d1b4497869 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b321eeb42ef38e1b9873d08f8c99e634 = $(`<div id="html_b321eeb42ef38e1b9873d08f8c99e634" style="width: 100.0%; height: 100.0%;"><b>0/10. Вокзал (Старт/Фініш)</b></div>`)[0];
+                popup_e9ccf60687402b56ec23e0d1b4497869.setContent(html_b321eeb42ef38e1b9873d08f8c99e634);
+            
+        
+
+        marker_f99ccfc8df76a06952681d8a46cdca25.bindPopup(popup_e9ccf60687402b56ec23e0d1b4497869)
+        ;
+
+        
+    
+    
+                marker_f99ccfc8df76a06952681d8a46cdca25.setIcon(icon_6db75a431a80096ee110743e0f011c54);
+            
+    
+            var marker_3a427266c174e9b8ff971b66bb29da2f = L.marker(
+                [48.6226403, 22.2975821],
+                {
+}
+            ).addTo(map_58e68241595bd00a2e1bc9e31ebc792c);
+        
+    
+            var div_icon_20fa524782121204c5b5f4da2c9fe889 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12pt; color: white; background-color: darkblue; border-radius: 50%; width: 24px; height: 24px; text-align: center; line-height: 24px; font-weight: bold; border: 1px solid white;\"\u003e1\u003c/div\u003e",
+  "className": "empty",
+});
+        
+    
+        var popup_d7c37bf812ae438ead53dfe949fc8d0e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_30a9e0c7dd8ca158afcfde9f0baf189b = $(`<div id="html_30a9e0c7dd8ca158afcfde9f0baf189b" style="width: 100.0%; height: 100.0%;"><b>1. Ясен Масарика</b></div>`)[0];
+                popup_d7c37bf812ae438ead53dfe949fc8d0e.setContent(html_30a9e0c7dd8ca158afcfde9f0baf189b);
+            
+        
+
+        marker_3a427266c174e9b8ff971b66bb29da2f.bindPopup(popup_d7c37bf812ae438ead53dfe949fc8d0e)
+        ;
+
+        
+    
+    
+                marker_3a427266c174e9b8ff971b66bb29da2f.setIcon(div_icon_20fa524782121204c5b5f4da2c9fe889);
+            
+    
+            var marker_1364aabd9af3ee129b5df34464b4a1b9 = L.marker(
+                [48.6234621, 22.2934854],
+                {
+}
+            ).addTo(map_58e68241595bd00a2e1bc9e31ebc792c);
+        
+    
+            var div_icon_705f0ae39134a97f4c2f535016680cf0 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12pt; color: white; background-color: darkblue; border-radius: 50%; width: 24px; height: 24px; text-align: center; line-height: 24px; font-weight: bold; border: 1px solid white;\"\u003e2\u003c/div\u003e",
+  "className": "empty",
+});
+        
+    
+        var popup_95c1a180ae2dbd1e167d217bed06c0dd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ef2d158185ac00c6bba30dd5cb4eb9bd = $(`<div id="html_ef2d158185ac00c6bba30dd5cb4eb9bd" style="width: 100.0%; height: 100.0%;"><b>2. Липова алея</b></div>`)[0];
+                popup_95c1a180ae2dbd1e167d217bed06c0dd.setContent(html_ef2d158185ac00c6bba30dd5cb4eb9bd);
+            
+        
+
+        marker_1364aabd9af3ee129b5df34464b4a1b9.bindPopup(popup_95c1a180ae2dbd1e167d217bed06c0dd)
+        ;
+
+        
+    
+    
+                marker_1364aabd9af3ee129b5df34464b4a1b9.setIcon(div_icon_705f0ae39134a97f4c2f535016680cf0);
+            
+    
+            var marker_7510fb7bb4875bde3e07017ccd6c179d = L.marker(
+                [48.6251824, 22.294594],
+                {
+}
+            ).addTo(map_58e68241595bd00a2e1bc9e31ebc792c);
+        
+    
+            var div_icon_11bfc092bb2c8368cba4401fe66ee840 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12pt; color: white; background-color: darkblue; border-radius: 50%; width: 24px; height: 24px; text-align: center; line-height: 24px; font-weight: bold; border: 1px solid white;\"\u003e3\u003c/div\u003e",
+  "className": "empty",
+});
+        
+    
+        var popup_c3a6c62a525eb1fd2c12dd4fdab5cba4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_162496a59d869f1322721a71bcb30431 = $(`<div id="html_162496a59d869f1322721a71bcb30431" style="width: 100.0%; height: 100.0%;"><b>3. Совине Гніздо</b></div>`)[0];
+                popup_c3a6c62a525eb1fd2c12dd4fdab5cba4.setContent(html_162496a59d869f1322721a71bcb30431);
+            
+        
+
+        marker_7510fb7bb4875bde3e07017ccd6c179d.bindPopup(popup_c3a6c62a525eb1fd2c12dd4fdab5cba4)
+        ;
+
+        
+    
+    
+                marker_7510fb7bb4875bde3e07017ccd6c179d.setIcon(div_icon_11bfc092bb2c8368cba4401fe66ee840);
+            
+    
+            var marker_d2ce446cb1dddf7f6cf432f6a42e7114 = L.marker(
+                [48.6254216, 22.2962773],
+                {
+}
+            ).addTo(map_58e68241595bd00a2e1bc9e31ebc792c);
+        
+    
+            var div_icon_ccdc6a13e76045e92349a472b18e5321 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12pt; color: white; background-color: darkblue; border-radius: 50%; width: 24px; height: 24px; text-align: center; line-height: 24px; font-weight: bold; border: 1px solid white;\"\u003e4\u003c/div\u003e",
+  "className": "empty",
+});
+        
+    
+        var popup_b525ff1a37b345dcf5cf76d4a352ebf8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0714f0846a391c0961574611d7bfc3a4 = $(`<div id="html_0714f0846a391c0961574611d7bfc3a4" style="width: 100.0%; height: 100.0%;"><b>4. Реформатська Церква</b></div>`)[0];
+                popup_b525ff1a37b345dcf5cf76d4a352ebf8.setContent(html_0714f0846a391c0961574611d7bfc3a4);
+            
+        
+
+        marker_d2ce446cb1dddf7f6cf432f6a42e7114.bindPopup(popup_b525ff1a37b345dcf5cf76d4a352ebf8)
+        ;
+
+        
+    
+    
+                marker_d2ce446cb1dddf7f6cf432f6a42e7114.setIcon(div_icon_ccdc6a13e76045e92349a472b18e5321);
+            
+    
+            var marker_f0782731b9aaa9ae499ab6ac8f3d539b = L.marker(
+                [48.6234585, 22.2992599],
+                {
+}
+            ).addTo(map_58e68241595bd00a2e1bc9e31ebc792c);
+        
+    
+            var div_icon_583cd42285a6f70c7de706bb42c77a96 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12pt; color: white; background-color: darkblue; border-radius: 50%; width: 24px; height: 24px; text-align: center; line-height: 24px; font-weight: bold; border: 1px solid white;\"\u003e5\u003c/div\u003e",
+  "className": "empty",
+});
+        
+    
+        var popup_c9ab7ed5062220b278646f0a7507ea38 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4affc054b5680f92cf20333b9358379c = $(`<div id="html_4affc054b5680f92cf20333b9358379c" style="width: 100.0%; height: 100.0%;"><b>5. Костел святого Юрія</b></div>`)[0];
+                popup_c9ab7ed5062220b278646f0a7507ea38.setContent(html_4affc054b5680f92cf20333b9358379c);
+            
+        
+
+        marker_f0782731b9aaa9ae499ab6ac8f3d539b.bindPopup(popup_c9ab7ed5062220b278646f0a7507ea38)
+        ;
+
+        
+    
+    
+                marker_f0782731b9aaa9ae499ab6ac8f3d539b.setIcon(div_icon_583cd42285a6f70c7de706bb42c77a96);
+            
+    
+            var marker_b70742e2c0fa9abfb8858a6354fa8847 = L.marker(
+                [48.6230194, 22.3021676],
+                {
+}
+            ).addTo(map_58e68241595bd00a2e1bc9e31ebc792c);
+        
+    
+            var div_icon_e4a5100fe879ed55c8173c955ab6e312 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12pt; color: white; background-color: darkblue; border-radius: 50%; width: 24px; height: 24px; text-align: center; line-height: 24px; font-weight: bold; border: 1px solid white;\"\u003e6\u003c/div\u003e",
+  "className": "empty",
+});
+        
+    
+        var popup_3bcb245f4100d0d672fe7f6d1c404e0d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_320388f2be9c34d56276233a3c49f4da = $(`<div id="html_320388f2be9c34d56276233a3c49f4da" style="width: 100.0%; height: 100.0%;"><b>6. Хресто-Воздвиженський катедральний собор</b></div>`)[0];
+                popup_3bcb245f4100d0d672fe7f6d1c404e0d.setContent(html_320388f2be9c34d56276233a3c49f4da);
+            
+        
+
+        marker_b70742e2c0fa9abfb8858a6354fa8847.bindPopup(popup_3bcb245f4100d0d672fe7f6d1c404e0d)
+        ;
+
+        
+    
+    
+                marker_b70742e2c0fa9abfb8858a6354fa8847.setIcon(div_icon_e4a5100fe879ed55c8173c955ab6e312);
+            
+    
+            var marker_be5535c36cad2674b621993b776fc5f7 = L.marker(
+                [48.6231573, 22.3025218],
+                {
+}
+            ).addTo(map_58e68241595bd00a2e1bc9e31ebc792c);
+        
+    
+            var div_icon_2da14c42c02e85ffe607316b4daf9e6b = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12pt; color: white; background-color: darkblue; border-radius: 50%; width: 24px; height: 24px; text-align: center; line-height: 24px; font-weight: bold; border: 1px solid white;\"\u003e7\u003c/div\u003e",
+  "className": "empty",
+});
+        
+    
+        var popup_68bb765ae5c146334463c8b8a646c2ad = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9bbd8fe4d9a0ee1549e1a85aaf360409 = $(`<div id="html_9bbd8fe4d9a0ee1549e1a85aaf360409" style="width: 100.0%; height: 100.0%;"><b>7. Резиденція єпископа</b></div>`)[0];
+                popup_68bb765ae5c146334463c8b8a646c2ad.setContent(html_9bbd8fe4d9a0ee1549e1a85aaf360409);
+            
+        
+
+        marker_be5535c36cad2674b621993b776fc5f7.bindPopup(popup_68bb765ae5c146334463c8b8a646c2ad)
+        ;
+
+        
+    
+    
+                marker_be5535c36cad2674b621993b776fc5f7.setIcon(div_icon_2da14c42c02e85ffe607316b4daf9e6b);
+            
+    
+            var marker_ffff253237b083030427d1355ff5f4e4 = L.marker(
+                [48.6212238, 22.306576],
+                {
+}
+            ).addTo(map_58e68241595bd00a2e1bc9e31ebc792c);
+        
+    
+            var div_icon_88f895869940a09cbad0550090e7b93d = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12pt; color: white; background-color: darkblue; border-radius: 50%; width: 24px; height: 24px; text-align: center; line-height: 24px; font-weight: bold; border: 1px solid white;\"\u003e8\u003c/div\u003e",
+  "className": "empty",
+});
+        
+    
+        var popup_04a68b261be388e7a8e6660c332d92b8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_588898a2e03e254e5c54a701a6439965 = $(`<div id="html_588898a2e03e254e5c54a701a6439965" style="width: 100.0%; height: 100.0%;"><b>8. Закарпатський краєзнавчий музей ім. Тиводара Легоцького</b></div>`)[0];
+                popup_04a68b261be388e7a8e6660c332d92b8.setContent(html_588898a2e03e254e5c54a701a6439965);
+            
+        
+
+        marker_ffff253237b083030427d1355ff5f4e4.bindPopup(popup_04a68b261be388e7a8e6660c332d92b8)
+        ;
+
+        
+    
+    
+                marker_ffff253237b083030427d1355ff5f4e4.setIcon(div_icon_88f895869940a09cbad0550090e7b93d);
+            
+    
+            var marker_142aee3eff4503a5beae7cd0e612e3ae = L.marker(
+                [48.62134, 22.3067103],
+                {
+}
+            ).addTo(map_58e68241595bd00a2e1bc9e31ebc792c);
+        
+    
+            var div_icon_4a8247f883ebdc1f56a70b6b22a678f2 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12pt; color: white; background-color: darkblue; border-radius: 50%; width: 24px; height: 24px; text-align: center; line-height: 24px; font-weight: bold; border: 1px solid white;\"\u003e9\u003c/div\u003e",
+  "className": "empty",
+});
+        
+    
+        var popup_9199bd976ed40fa861e7e7cfffa13540 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fac29262c4f405c5538e2416cde799ff = $(`<div id="html_fac29262c4f405c5538e2416cde799ff" style="width: 100.0%; height: 100.0%;"><b>9. Ужгородський замок</b></div>`)[0];
+                popup_9199bd976ed40fa861e7e7cfffa13540.setContent(html_fac29262c4f405c5538e2416cde799ff);
+            
+        
+
+        marker_142aee3eff4503a5beae7cd0e612e3ae.bindPopup(popup_9199bd976ed40fa861e7e7cfffa13540)
+        ;
+
+        
+    
+    
+                marker_142aee3eff4503a5beae7cd0e612e3ae.setIcon(div_icon_4a8247f883ebdc1f56a70b6b22a678f2);
+            
+    
+            var marker_86c80ec5044de203fd1177f4a8f9f103 = L.marker(
+                [48.606173, 22.3370773],
+                {
+}
+            ).addTo(map_58e68241595bd00a2e1bc9e31ebc792c);
+        
+    
+            var div_icon_daee4654fed62ed7efbf85d085afb6c8 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 12pt; color: white; background-color: darkblue; border-radius: 50%; width: 24px; height: 24px; text-align: center; line-height: 24px; font-weight: bold; border: 1px solid white;\"\u003e10\u003c/div\u003e",
+  "className": "empty",
+});
+        
+    
+        var popup_74ec955cfce19f4f67031cee73c36e1d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_abdf316810399451f708677a0bcd7d5a = $(`<div id="html_abdf316810399451f708677a0bcd7d5a" style="width: 100.0%; height: 100.0%;"><b>10. Горянська ротонда Св. Анни</b></div>`)[0];
+                popup_74ec955cfce19f4f67031cee73c36e1d.setContent(html_abdf316810399451f708677a0bcd7d5a);
+            
+        
+
+        marker_86c80ec5044de203fd1177f4a8f9f103.bindPopup(popup_74ec955cfce19f4f67031cee73c36e1d)
+        ;
+
+        
+    
+    
+                marker_86c80ec5044de203fd1177f4a8f9f103.setIcon(div_icon_daee4654fed62ed7efbf85d085afb6c8);
+            
+</script>
+</html>
